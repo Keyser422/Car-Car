@@ -14,18 +14,18 @@ Team:
     git clone <<repositoryURLhere>>
 
 3. Run these commands
-    **-docker-volume create beta-data**
-    **-docker-compose build**
-    **-docker-compose up**
+    - docker-volume create beta-data
+    - docker-compose build
+    - docker-compose up
 
 4. After you run docker compose up the application can be reached at
-   `http://localhost:3000/`
+   - `http://localhost:3000/`
 
 
 ## Design
 Below is a diagram of the relationship between the different microservices
 
-![Img](`https://excalidraw.com/#json=4eLBgaCFV2VhRQ_1es-D2,m_nMiCp7dou5A7x8244zlQ`)
+![Img](https://excalidraw.com/#json=4eLBgaCFV2VhRQ_1es-D2,m_nMiCp7dou5A7x8244zlQ)
 
 
 ## API Documentation

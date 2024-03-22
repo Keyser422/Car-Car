@@ -8,10 +8,13 @@ const ListAppointments = function() {
 
     const getAppointments = async function() {
         const response = await fetch("http://localhost:8080/api/appointments/");
-        console.log(response);
         if (response.ok) {
             const appointmentsObj = await response.json();
-            setAppointments(appointmentsObj["appointments"]);
+            const activeAppointments = appointmentsObj["appointments"].filter(appointment =>
+              appointment.status !== "canceled" && appointment.status !== "finished"
+            );
+
+            setAppointments(activeAppointments);
         }
     }
 
@@ -33,7 +36,7 @@ const ListAppointments = function() {
         };
         const response = await fetch(url, fetchOptions);
         if (response.ok) {
-            getAppointments();
+            setAppointments(prevAppointments => prevAppointments.filter(appointment => appointment.id !== apptId));
         }
     };
 

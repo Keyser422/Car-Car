@@ -25,7 +25,7 @@ Team:
 ## Design
 Below is a diagram of the relationship between the different microservices
 
-![Img](https://excalidraw.com/#json=4eLBgaCFV2VhRQ_1es-D2,m_nMiCp7dou5A7x8244zlQ)
+![Img](./images/design_diagram.png)
 
 
 ## API Documentation

@@ -5,7 +5,7 @@ CarCar is an application designed, to assit you in managing the day to day of a 
 Team:
 
 * James Keyser - Service
-* Person 2 - Which microservice?
+* Jaron Laquindanum - Sales
 
 ## How to Run this App
 1. Fork this repository
@@ -34,12 +34,13 @@ Below is a diagram of the relationship between the different microservices
 2. The Inventory API can add a vehicle, a vehicle model, and manufacturer. It will also track
 inventory of the dealerships available vehicles.
 
-3. The Service API allows the user to create and track vehicle maintenance appointments. It also will track the status of the appointments as pending, canceled, or finished. It has the ability to add a new technician and track which apppointments that technician is asssigned to work. There is a special feature that will track the vin of a vehicle and if it was sold by the dealership appoinments on those vehicles will be VIP status. Lastly it has a service history that track every appoinment that has gone through the system.
+## Service microservice
+
+The Service API allows the user to create and track vehicle maintenance appointments. It also will track the status of the appointments as pending, canceled, or finished. It has the ability to add a new technician and track which appointments that technician is assigned to work. There is a special feature that will track the vin of a vehicle and if it was sold by the dealership appoinments on those vehicles will be VIP status. Lastly it has a service history that track every appoinment that has gone through the system.
 
 ## Sales microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+The Sales API allows the user to create and track Salespeople, customers, sales, and the sale history. It will keep record of automobile sales that come from the inventory, containing the price, vin, customer, and salesperson. A customer can not sell cars that are not within the listed inventory. They can not sell a car that had already been sold before. The special feature shows automobiles available for sale from the inventory and they will be marked as unsold. It will detect automobiles that have already been sold.
 
 
 ### URLs and Ports
@@ -89,7 +90,7 @@ Service
  -Create Technician
     `http://localhost:8080/api/technicians/`
  -Delete a Specific Technician
-    `http://localhost:8080/api/technicians/`
+    `http://localhost:8080/api/technicians/:id/`
  -List Appointments
     `http://localhost:8080/api/appointments/`
  -Create an Appointment
@@ -100,3 +101,24 @@ Service
     `http://localhost:8080/api/appointments/:id/cancel/`
  -Set Appointment Status to Finished
     `http://localhost:8080/api/appointments/:id/finish/`
+
+Sales
+ -List salespeople
+    `http://localhost:8090/api/salespeople/`
+ -Create a salesperson
+    `http://localhost:8090/api/salespeople/`
+ -Delete a salesperson
+    `http://localhost:8090/api/salespeople/:id/`
+ -List Customers
+    `http://localhost:8090/api/customers/`
+ -Create a customer
+    `http://localhost:8090/api/customers/`
+ -Delete a customer
+    `http://localhost:8090/api/customers/:id/`
+ -List sales
+    `http://localhost:8090/api/sales/`
+ -Create a sale
+    `http://localhost:8090/api/sales/`
+ -Delete a sale
+    `http://localhost:8090/api/sales/:id`
+
